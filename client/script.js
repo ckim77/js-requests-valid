@@ -5,6 +5,7 @@
 
 
 
+
 // PROBLEM 1
 /*
     In the index.html file in this folder there is a button with an id of 'say-hello-button'!
@@ -227,4 +228,34 @@ document.querySelector("#query-button").addEventListener('click', getRequest);
     console log the res.data. 
     Based on what we did earlier to display this type of data, write code that will display the response in your HTML document. 
 */
+
+const createFood = () => {
+    // let foodInput = document.querySelector('Input').value;
+    // let foodTitle = documment.createElement('span')
+    // foodTitle.textContent = foodInput;
+    // let foodList = document.createElement('li');
+    // foodList.appendChild(foodTitle);
+
+    // let body = {
+    //     newFood: `${foodInput}`
+    // }
+    // console.log(foodInput);
+    axios.post(`${baseURL}/food`, "cheese")
+    .then((res) => {
+        console.log(res.data)
+    })
+}
+
+document.getElementById('add-button').addEventListener('click', createFood);
+
+// const ohMy = () => {
+//     axios.get(`${baseURL}/animals`)
+//     .then(function(response) {
+//         for (i = 0; i < response.data.length; i++) {
+//             let newVar = document.createElement('p');
+//             newVar.textContent = response.data[i];
+//             document.body.appendChild(newVar);
+//         }
+//     })
+// }
 
